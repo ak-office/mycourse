@@ -47,7 +47,7 @@
   disable-select='true' disable-copy='true' disable-cut='true'
   disable-paste='true'></script>
 
-<script src="https://cdn.jwplayer.com/libraries/SAHhwvZq.js"></script>
+<script src="/js/jw.js"></script>
 <script> jwplayer.defaults = jwDefaults; </script>  
 <div id="jwplayerDiv"></div>  
 <script>
@@ -77,6 +77,7 @@ function setupPlayer(channelData) {
   var playerSetup = {
     file: channelData.link, // Using link as file URL
     // Add your Extra jw Player codes here 
+ "image": "/assets/img/play-cover.jpg",
  "autostart": true,
  "preload": "none",
   "repeat": true,
@@ -134,13 +135,12 @@ fetchChannels(function (channels) {
   } else {
     console.error('Channel not found for ID:', channelId);
   }
-});
-</script>
-<script>
-setTimeout(videovisible, 3000)
-function videovisible() {
-    document.getElementById('loading').style.display = 'none'
-}
+
+}).on('ready', function() {
+    // Set poster image for video element to avoid black background for audio-only programs.
+    var video = document.getElementById(this.id).getElementsByTagName('video')[0];
+    if (video) video.setAttribute('poster', this.getConfig().image);
+    });
 </script>
 </body>
 </html>
