@@ -1,17 +1,15 @@
 [
 
    {
-          "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/jioimage/newcpp/662aacbbe96587d1c1f53e7d/662aacbbe96587d1c1f53e7d_1714072770915_aa.jpg",
-        "name": "HINDI",
-        "id": "HINDI",
-        "link": "https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1260424/master.m3u8",
+        "name": "Introduction of History",
+        "id": "1-1",
+        "link": "https://appx-recordings.livelearn.in/drm/1adbcea5-606e-40d3-993b-d3e00b51db7e/drm-hls/master_tunak_tunak_tun.m3u8",
         "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
 }, 
 
    {
-          "logo": "https://v3img.voot.com/resizeMedium,w_1090,h_613/jioimage/newcpp/662aacbbe96587d1c1f53e7d/662aacbbe96587d1c1f53e7d_1714072770915_aa.jpg",
-        "name": "HINDI 4K",
-        "id": "HINDI_4K",
+        "name": "गुलाम वंश से पहले...",
+        "id": "2-1",
         "link": "https://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_atv_avc_hin_ipl_s1_m1260424/master.m3u8",
         "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
 } 
