@@ -1,13 +1,15 @@
 [
 
-   {
+   {    
+        "logo": "https://appx-wsb.kaxa.in/subject/2023-03-21-0.4413644405180348.jpg",
         "name": "Introduction of History",
         "id": "1-1",
         "link": "https://appx-recordings.livelearn.in/drm/1adbcea5-606e-40d3-993b-d3e00b51db7e/720p/drm-hls/master_tunak_tunak_tun.m3u8",
         "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
 }, 
 
-   {
+   {    
+        "logo": "https://appx-wsb.kaxa.in/paid_course3/2023-03-21-0.864213647141042.jpeg",
         "name": "1. गुलाम वंश से पहले...",
         "id": "2-1",
         "link": "https://appx-recordings.livelearn.in/drm/c3288d2a-5c85-4a1b-a054-7030976f450b/720p/drm-hls/master_tunak_tunak_tun.m3u8",
