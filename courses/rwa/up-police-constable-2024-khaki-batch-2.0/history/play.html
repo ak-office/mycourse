@@ -191,37 +191,6 @@ fetchChannels(function (channels) {
     // Set poster image for video element to avoid black background for audio-only programs.
     var video = document.getElementById(this.id).getElementsByTagName('video')[0];
     if (video) video.setAttribute('poster', this.getConfig().image);
-    
-
-const playerContainerSelector = '#jwplayer-container';
-const player = jwplayer('jwplayerDiv');
-const playerContainer = document.querySelector(playerContainerSelector);
-
-// display icon
-const rewindContainer = playerContainer.querySelector('.jw-display-icon-rewind');
-const forwardContainer = rewindContainer.cloneNode(true);
-const forwardDisplayButton = forwardContainer.querySelector('.jw-icon-rewind');
-forwardDisplayButton.style.transform = "scaleX(-1)";
-forwardDisplayButton.ariaLabel = "Forward 10 Seconds"
-const nextContainer = playerContainer.querySelector('.jw-display-icon-next');
-nextContainer.parentNode.insertBefore(forwardContainer, nextContainer);
-
-
-// control bar icon
-playerContainer.querySelector('.jw-display-icon-next').style.display = 'none'; // hide next button
-const buttonContainer = playerContainer.querySelector('.jw-button-container');
-const rewindControlBarButton = buttonContainer.querySelector(".jw-icon-rewind");
-const forwardControlBarButton = rewindControlBarButton.cloneNode(true);
-forwardControlBarButton.style.transform = "scaleX(-1)";
-forwardControlBarButton.ariaLabel = "Forward 10 Seconds";
-rewindControlBarButton.parentNode.insertBefore(forwardControlBarButton, rewindControlBarButton.nextElementSibling);
-
-// add onclick handlers
-[forwardDisplayButton, forwardControlBarButton].forEach(button => {
-  button.onclick = () => {
-    player.seek((player.getPosition() + 10));
-  }
-})
 
 	});
 </script>
