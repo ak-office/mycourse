@@ -193,8 +193,8 @@ fetchChannels(function (channels) {
     if (video) video.setAttribute('poster', this.getConfig().image);
     
 
-	const playerContainerSelector = '#jwplayer-container';
-const player = jwplayer('#player');
+const playerContainerSelector = '#jwplayer-container';
+const player = jwplayer('jwplayerDiv');
 const playerContainer = document.querySelector(playerContainerSelector);
 
 // display icon
