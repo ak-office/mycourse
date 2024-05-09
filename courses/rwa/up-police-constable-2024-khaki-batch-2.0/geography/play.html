@@ -13,7 +13,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/wrapper.css" />
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  <link rel="stylesheet" type="text/css" href="/css/channel.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -74,67 +73,120 @@
 
   <!---------------------- MAIN CONTENT  ---------------------->
 
+<br>
+
+<body>
+
+  <title> AK PLAYER </title>
+
+<link rel="stylesheet" href="/css/jw.css">
+<script src="/js/jw.js"></script>
+<div id="jwplayerDiv"></div>  
+<script>
+// Function to get URL parameters
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+// Function to fetch JSON data
+function fetchChannels(callback) {
+  // Replace 'path/to/your/channels.json' Remember add the json in url format 
+  fetch('video.json')
+    .then(response => response.json())
+    .then(data => callback(data))
+    .catch(error => console.error('Error fetching JSON:', error));
+}
+
+// Define player setup function
+function setupPlayer(channelData) {
+  // Set up JWPlayer
+  var playerSetup = {
+    file: channelData.link, // Using link as file URL
+    // Add your Extra jw Player codes here 
+ "image": "/assets/img/play-cover.jpg",
+ "title": channelData.name,
 
 
-  <title> The WiNNERS Institute</title>
+ "autostart": false,
+ "preload": "none",
+  "repeat": false,
+  "Volume": "100",
+  "mute": false,
+  "stretching": "exactfit",
+  "width": "100%", 
+  "cast": {},
+  };
 
-  <h5 class="header3" style="text-align: center;"><b> The WiNNERS Institute </b><i class="fa fa-caret"
-      style="margin-bottom:10px;color:#999"></i></h5>
+  if (channelData.link.endsWith('.mpd')) {
+    // Set up DRM for DASH with KeyId & key if available
+    playerSetup.type = 'dash';
 
-  
-  <section>
-    <section>
-      <div class="row">
+    // Check if Clear Key is available
+    if (channelData.keyId && channelData.key) {
+      playerSetup.drm = {
+        clearkey: {
+          keyId: channelData.keyId,
+          key: channelData.key
+        }
+      };
+    }
+  } else if (channelData.link.endsWith('.m3u8')) {
+    // Set up DRM for HLS with keys if available
+    playerSetup.type = 'hls';
 
-        <div class="mb-4 col-md-4">
-          <div class="h-100 card"><a href="reasoning-foundation/rf0223/">
-              <img alt="Course image" src=" https://appx-wsb.kaxa.in/paid_course3/2023-02-13-0.1448655395843479.png"
-                class="card-img-top" width="80%" style="border-radius: 18px;" />
-              <div class="d-flex flex-column border-top card-body">
-                <div class="font-lg font-bold card-title" /><b> Reasoning Foundation 2023 By Aditya Patel Sir (Code - RF0223)</b>
-              </div>
-              <button type="button" class="btn btn-primary d-block w-100" style="border-radius: 18px;" /><b> View </b>
-          </div>
-          </button>
-          </a>
-        </div>
-        </div>
+    // Check if Clear Key is available
+    if (channelData.keyId && channelData.key) {
+      playerSetup.drm = {
+        clearkey: {
+          keyId: channelData.keyId,
+          key: channelData.key
+        }
+      };
+    }
+  } else {
+    // Default to HLS without keys
+    playerSetup.type = 'mp4';
+  }
 
-        <div class="mb-4 col-md-4">
-            <div class="h-100 card"><a href="vyapam-foundation/vf0922/">
-                <img alt="Course image" src=" https://appx-wsb.kaxa.in/paid_course3/2022-10-22-0.1736477767055984.png"
-                  class="card-img-top" width="80%" style="border-radius: 18px;" />
-                <div class="d-flex flex-column border-top card-body">
-                  <div class="font-lg font-bold card-title" /><b> PEB / ESB / व्यापम फाउंडेशन 2022 (Code - VF0922)</b>
-                </div>
-                <button type="button" class="btn btn-primary d-block w-100" style="border-radius: 18px;" /><b> View </b>
-            </div>
-            </button>
-            </a>
-          </div>
-        </div>
+  jwplayer("jwplayerDiv").setup(playerSetup);
+}
 
-      </div>
-    </section>
-  </section>
+// Fetch channels data and set up the player
+fetchChannels(function (channels) {
+  // Get channel ID from the URL
+  var channelId = getParameterByName('id');
+  // Find the channel data in the JSON
+  var channelData = channels.find(channel => channel.id === channelId);
+
+  if (channelData) {
+    // Set up the player with the channel data
+    setupPlayer(channelData);
+  } else {
+    console.error('Channel not found for ID:', channelId);
+  }
+
+}).on('ready', function() {
+    // Set poster image for video element to avoid black background for audio-only programs.
+    var video = document.getElementById(this.id).getElementsByTagName('video')[0];
+    if (video) video.setAttribute('poster', this.getConfig().image);
+
+  });
+</script>
+
+
 
 
 
   <!----------------------  FOOTER  ---------------------->
 
 
-  <center>
-    <h2>
-      <div class="header3" /> <b> Made by <a href="/link/ak.html" target="_blank">
-          <font color="yellow"> Avdhesh Kushwah </font>
-        </a></b></div>
-  </center>
-  </h2> <br>
 
-  <center>
-    <script type="text/javascript" src="//widget.supercounters.com/ssl/online_i.js"></script>
-    <script type="text/javascript">sc_online_i(1689631, "ffffff", "303030");</script><br></br>
-  </center>
 
   <br><br>
 

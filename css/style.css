@@ -1713,14 +1713,14 @@ fieldset:disabled a.btn {
   border-color: #b5b500;
 }
 .btn-primary:hover {
-  color: #fff;
-  background-color: #017bfe;
+  color: #000000;
+  background-color: #ffff00;
   border-color: #fff;
 }
 .btn-primary:focus,
 .btn-primary.focus {
   color: #000;
-  background-color: #52ffff;
+  background-color: #fcff52;
   border-color: #ffffff;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(252, 252, 252, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(252, 252, 252, 0.5);

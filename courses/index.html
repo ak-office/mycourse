@@ -10,8 +10,7 @@
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons"      rel="stylesheet">
-          <link rel="stylesheet" type="text/css" href="/css/wrapper.css"/>    
-          <script src="/login/protection.js"></script>                                                                                    
+          <link rel="stylesheet" type="text/css" href="/css/wrapper.css"/>                                                                                        
           <link rel="stylesheet" type="text/css" href="/css/style.css"/>  
           <link rel="preconnect" href="https://fonts.gstatic.com">
           <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet"> 
@@ -19,11 +18,13 @@
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="/login/protection.js"></script>
           <script src="/js/click-heart.js"></script>
           <style>body{margin:0!important;padding:0!important;background-color:#272727!important;color:#fff!important;}   
            body a{color:#ffffff}</style>
 
- </head>
+ </head>  
+ <body> 
 
 
 
@@ -53,51 +54,28 @@
 
 
 
+ <title> AK Course </title>  
 
-<body>
+<h5 class="header3" style="text-align: center;"> AK Course <i class="fa fa-caret" style="margin-bottom:10px;color:#999"></i></h5>
+
+<div class="container"><div id="list" class="row">
   
-<link rel="stylesheet" href="/css/jw.css">
-<script src="/js/jw.js"></script>
-  <br>
-  <div id="jwplayerDiv"></div>
-<br>
-  <script>
-    
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id');
-    jwplayer("jwplayerDiv").setup({
+<div class="mb-4 col-6 col-md-3"><div class="cursor-pointer card"><div class="text-center card-body"><a href="rwa/"><img src="/assets/img/institute/rwa/logo.jpg" style="width:110px;height:110px;object-fit:cover" class="rounded-circle text-center mb-2 card-img"><h6 class="mb-0 text-full"><b>Rojgar with Ankit (RWA)</b></a></div></div></div>
+  
+<div class="mb-4 col-6 col-md-3"><div class="cursor-pointer card"><div class="text-center card-body"><a href="winners/"><img src="/assets/img/institute/winners/logo.jpg" style="width:110px;height:110px;object-fit:cover" class="rounded-circle text-center mb-2 card-img"><h6 class="mb-0 text-full"><b>The WiNNERS Institute</b></a></div></div></div></div>
 
-      controls: "true",
-      displaytitle: "true",
-      fullscreen: "true",
-      stretching: "exactfit",
-      autostart: "false",
-      primary: "html5",
-      hlshtml: "true",
+</div>
 
-      playlist: [
-        ,
-        {
-          title: "𝗔𝗞 𝗟𝗜𝗩𝗘 🇮🇳",
-          description: "Join Telegram Channel @AK_LIVE_OFFICE",
-          image: "/images/play-cover.jpg",
-          sources: [{
-            file: id,
-            type: 'hls',
-            label: "0"
-          }],
-        }],
 
-      "image": "/assets/img/play-cover.jpg"
-    }).on('ready', function () {
-      // Set poster image for video element to avoid black background for audio-only programs.
-      var video = document.getElementById(this.id).getElementsByTagName('video')[0];
-      if (video) video.setAttribute('poster', this.getConfig().image);
+   <!----------------------  FOOTER  ---------------------->
 
-    });
 
-  </script>
+  <center> <h2><div class="header3"/> <b>  Made by  <a href="/link/ak.html" target="_blank"> <font color="yellow">  Avdhesh Kushwah  </font></a></b></div></center> </h2> <br>
 
-     
+   <center><script type="text/javascript" src="//widget.supercounters.com/ssl/online_i.js"></script>
+   <script type="text/javascript">sc_online_i(1689631,"ffffff","303030");</script><br></br></center>
+
+      <br><br>
+
 </body>
 </html>
